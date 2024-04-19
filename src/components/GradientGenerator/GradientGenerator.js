@@ -2,18 +2,20 @@ import React from "react";
 import Input from "../Input";
 
 function GradientGenerator() {
-  const [color, setColor] = React.useState([]);
+  const [colors, setColors] = React.useState(["#db4e1f", "#e5ca1f"]);
 
-  console.log({ color });
+  console.log({ colors });
   return (
     <div>
       <div>gradient preview here</div>
-      <Input
-        label={"Color 1"}
-        inputType={"color"}
-        value={color}
-        onChange={(e) => setColor(e.target.value)}
-      />
+      {colors.map((color, index) => (
+        <Input
+          label={`Color ${index + 1}`}
+          inputType={"color"}
+          value={color}
+          onChange={(e) => setColors(e.target.value)}
+        />
+      ))}
     </div>
   );
 }
