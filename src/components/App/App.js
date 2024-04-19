@@ -1,7 +1,12 @@
 import React from "react";
+import GradientGenerator from "../GradientGenerator";
 
 function App() {
-  return <div>Hello</div>;
+  return (
+    <>
+      <GradientGenerator />
+    </>
+  );
 }
 
 export default App;
