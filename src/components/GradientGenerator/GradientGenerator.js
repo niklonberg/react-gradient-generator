@@ -4,6 +4,12 @@ import Input from "../Input";
 function GradientGenerator() {
   const [colors, setColors] = React.useState(["#db4e1f", "#e5ca1f"]);
 
+  function handleColorChange(color, colorIndex) {
+    const nextColors = [...colors];
+    nextColors[colorIndex] = color;
+    setColors(nextColors);
+  }
+
   console.log({ colors });
   return (
     <div>
@@ -13,7 +19,7 @@ function GradientGenerator() {
           label={`Color ${index + 1}`}
           inputType={"color"}
           value={color}
-          onChange={(e) => setColors(e.target.value)}
+          onChange={(e) => handleColorChange(e.target.value, index)}
         />
       ))}
     </div>
